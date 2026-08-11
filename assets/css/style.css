@@ -87,24 +87,50 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- hero ---------- */
 .hero { position: relative; border-bottom: 1px solid var(--line); overflow: hidden; }
-.hero .wrap {
-  display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px;
-  align-items: center; min-height: min(78dvh, 720px); padding-top: 48px; padding-bottom: 48px;
-}
-.hero h1 { font-size: clamp(2.3rem, 5vw, 3.7rem); }
+.hero-top { padding-top: clamp(48px, 8dvh, 96px); text-align: center; max-width: 880px; }
+.hero h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); }
 .hero h1 .accent { color: var(--accent); }
-.hero .sub { margin: 20px 0 30px; font-size: 1.08rem; max-width: 46ch; }
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-.hero-media { position: relative; }
-.hero-media img {
-  width: 100%; height: min(62dvh, 560px); object-fit: cover; object-position: center 30%;
-  border-radius: var(--r-card); border: 1px solid var(--line);
+.hero .sub { margin: 20px auto 30px; font-size: 1.1rem; max-width: 52ch; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+/* ---------- hero scene ---------- */
+.hero-scene { margin-top: clamp(8px, 3dvh, 40px); }
+.hero-scene svg { display: block; width: 100%; height: clamp(230px, 30vw, 430px); }
+
+.l-far  { animation: worldShift 70s linear infinite; }
+.l-mid  { animation: worldShift 32s linear infinite; }
+.l-near { animation: worldShift 8s linear infinite; }
+@keyframes worldShift { to { transform: translateX(-1600px); } }
+
+.lane { animation: laneShift .9s linear infinite; }
+@keyframes laneShift { to { stroke-dashoffset: -112; } }
+
+.wheel { animation: wheelSpin .7s linear infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes wheelSpin { to { transform: rotate(360deg); } }
+
+.truck-body { animation: cabBob 1.6s ease-in-out infinite alternate; }
+@keyframes cabBob { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+
+.streak { opacity: 0; animation: streakDash 1s linear infinite; }
+.streak.s2 { animation-delay: .25s; }
+.streak.s3 { animation-delay: .55s; }
+@keyframes streakDash {
+  0% { opacity: 0; transform: translateX(30px); }
+  25% { opacity: .5; }
+  100% { opacity: 0; transform: translateX(-120px); }
 }
-.hero-badge {
-  position: absolute; left: 18px; bottom: 18px;
-  background: rgba(14, 17, 24, .82); backdrop-filter: blur(8px);
-  border: 1px solid var(--line); border-radius: var(--r-int);
-  padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600;
+
+/* scroll-linked: the truck pulls out of the depot as you scroll (falls back to ambient drive) */
+@supports (animation-timeline: scroll()) {
+  .truck-mover {
+    animation: truckScroll linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 900px;
+  }
+  @keyframes truckScroll {
+    from { transform: translateX(-40px); }
+    to { transform: translateX(620px); }
+  }
 }
 
 /* ---------- stats strip ---------- */
@@ -254,8 +280,6 @@ form.quote {
 
 /* ---------- responsive ---------- */
 @media (max-width: 1020px) {
-  .hero .wrap { grid-template-columns: 1fr; min-height: 0; }
-  .hero-media img { height: 380px; }
   .svc-grid, .routes .wrap, .quote-sec .wrap, .about-grid, .why-grid { grid-template-columns: 1fr; }
   .why-item:nth-last-child(2) { border-bottom: 1px solid var(--line); }
   .steps { grid-template-columns: 1fr; }

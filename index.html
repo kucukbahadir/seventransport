@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=1">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 <script>
 window.ST_CONFIG = {
   web3formsKey: "",            /* TODO: Web3Forms access key (Issue #1) */
@@ -96,31 +96,171 @@ window.ST_CONFIG = {
 <main>
 
 <section class="hero">
-  <div class="wrap">
-    <div>
-      <h1><span data-i18n="hero.t1">Road freight between</span> <span class="accent">NL, PL</span> <span data-i18n="hero.t2">and all of Europe</span></h1>
-      <p class="sub" data-i18n="hero.sub">Full and partial loads, CMR insured and delivered on schedule, with one contact person from pickup to drop.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#quote" data-i18n="nav.quote">Get a quote</a>
-        <a class="btn btn-whatsapp" href="https://wa.me/31643226627" target="_blank" rel="noopener">
-          <svg class="icon"><use href="#i-chat"/></svg><span data-i18n="hero.wa">Chat on WhatsApp</span>
-        </a>
-      </div>
+  <div class="wrap hero-top">
+    <h1><span data-i18n="hero.t1">Road freight between</span> <span class="accent">NL, PL</span> <span data-i18n="hero.t2">and all of Europe</span></h1>
+    <p class="sub" data-i18n="hero.sub">Full and partial loads, CMR insured and delivered on schedule, with one contact person from pickup to drop.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#quote" data-i18n="nav.quote">Get a quote</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/31643226627" target="_blank" rel="noopener">
+        <svg class="icon"><use href="#i-chat"/></svg><span data-i18n="hero.wa">Chat on WhatsApp</span>
+      </a>
     </div>
-    <div class="hero-media">
-      <img src="assets/img/hero.jpg?v=1" alt="DAF XF truck ready for departure" fetchpriority="high">
-      <div class="hero-badge">
-        <svg class="icon"><use href="#i-shield"/></svg>
-        <span data-i18n="hero.badge">CMR insured cargo</span>
-      </div>
-    </div>
+  </div>
+
+  <!-- animated depot-to-highway scene; decorative, world loops while the truck holds the road -->
+  <div class="hero-scene" aria-hidden="true">
+    <svg viewBox="0 0 1600 440" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="glassGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#b8dcff" stop-opacity=".85"/>
+          <stop offset="1" stop-color="#5f7ea6" stop-opacity=".9"/>
+        </linearGradient>
+        <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ffd98a" stop-opacity=".28"/>
+          <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+        </linearGradient>
+        <g id="skyline1">
+          <rect x="40" y="250" width="90" height="90" fill="#161c29"/>
+          <rect x="150" y="222" width="60" height="118" fill="#161c29"/>
+          <rect x="230" y="268" width="120" height="72" fill="#141a26"/>
+          <rect x="420" y="240" width="70" height="100" fill="#161c29"/>
+          <rect x="510" y="276" width="150" height="64" fill="#141a26"/>
+          <path d="M700 340V254h10v-16h44v16h10v86z" fill="#161c29"/>
+          <rect x="800" y="230" width="56" height="110" fill="#161c29"/>
+          <rect x="880" y="262" width="130" height="78" fill="#141a26"/>
+          <path d="M1060 340v-70h90l30-24v94z" fill="#161c29"/>
+          <rect x="1230" y="246" width="64" height="94" fill="#161c29"/>
+          <rect x="1320" y="272" width="180" height="68" fill="#141a26"/>
+        </g>
+        <g id="mid1">
+          <!-- gantry crane lifting a container -->
+          <g>
+            <rect x="60" y="120" width="14" height="200" fill="#232c3f"/>
+            <rect x="260" y="120" width="14" height="200" fill="#232c3f"/>
+            <rect x="40" y="104" width="260" height="18" fill="#2a3348"/>
+            <rect x="150" y="122" width="4" height="56" fill="#3a465e"/>
+            <rect x="118" y="178" width="70" height="34" rx="2" fill="#f0a028"/>
+            <rect x="52" y="308" width="30" height="12" fill="#232c3f"/>
+            <rect x="258" y="308" width="30" height="12" fill="#232c3f"/>
+          </g>
+          <!-- container stacks -->
+          <g>
+            <rect x="340" y="284" width="96" height="36" rx="2" fill="#2a3348"/>
+            <rect x="340" y="246" width="96" height="36" rx="2" fill="#f0a028"/>
+            <rect x="448" y="284" width="96" height="36" rx="2" fill="#3a465e"/>
+          </g>
+          <!-- warehouse -->
+          <g>
+            <path d="M640 320v-74l70-22 70 22v74z" fill="#1b2130"/>
+            <rect x="664" y="284" width="34" height="36" fill="#121722"/>
+            <rect x="712" y="284" width="34" height="36" fill="#121722"/>
+            <rect x="640" y="240" width="140" height="8" fill="#232c3f"/>
+          </g>
+          <!-- trees -->
+          <g fill="#1a2233">
+            <path d="M900 320c-18 0-24-14-12-24-10-10 0-26 12-26s22 16 12 26c12 10 6 24-12 24z"/>
+            <path d="M960 320c-14 0-20-12-10-20-8-9 0-22 10-22s18 13 10 22c10 8 4 20-10 20z"/>
+          </g>
+          <!-- second stack group -->
+          <g>
+            <rect x="1060" y="284" width="96" height="36" rx="2" fill="#3a465e"/>
+            <rect x="1168" y="284" width="96" height="36" rx="2" fill="#2a3348"/>
+            <rect x="1168" y="246" width="96" height="36" rx="2" fill="#f0a028"/>
+          </g>
+          <g fill="#1a2233">
+            <path d="M1360 320c-18 0-24-14-12-24-10-10 0-26 12-26s22 16 12 26c12 10 6 24-12 24z"/>
+            <path d="M1430 320c-14 0-20-12-10-20-8-9 0-22 10-22s18 13 10 22c10 8 4 20-10 20z"/>
+          </g>
+        </g>
+        <g id="posts1">
+          <g fill="#8d99ad">
+            <rect x="120" y="322" width="6" height="20"/><rect x="120" y="322" width="6" height="6" fill="#f0a028"/>
+          </g>
+          <g fill="#8d99ad">
+            <rect x="520" y="322" width="6" height="20"/><rect x="520" y="322" width="6" height="6" fill="#f0a028"/>
+          </g>
+          <g fill="#8d99ad">
+            <rect x="920" y="322" width="6" height="20"/><rect x="920" y="322" width="6" height="6" fill="#f0a028"/>
+          </g>
+          <g fill="#8d99ad">
+            <rect x="1320" y="322" width="6" height="20"/><rect x="1320" y="322" width="6" height="6" fill="#f0a028"/>
+          </g>
+        </g>
+      </defs>
+
+      <!-- warm ground glow -->
+      <ellipse cx="800" cy="470" rx="980" ry="180" fill="#f0a028" opacity=".05"/>
+
+      <!-- parallax world -->
+      <g class="l-far"><use href="#skyline1"/><use href="#skyline1" x="1600"/></g>
+      <g transform="translate(0 24)"><g class="l-mid"><use href="#mid1"/><use href="#mid1" x="1600"/></g></g>
+
+      <!-- road -->
+      <rect x="0" y="340" width="1600" height="64" fill="#12161f"/>
+      <line x1="0" y1="344" x2="1600" y2="344" stroke="#2a3348" stroke-width="2"/>
+      <line class="lane" x1="0" y1="374" x2="1600" y2="374" stroke="#8d99ad" stroke-width="4" stroke-dasharray="60 52"/>
+      <line x1="0" y1="401" x2="1600" y2="401" stroke="#232c3f" stroke-width="2"/>
+      <g class="l-near"><use href="#posts1"/><use href="#posts1" x="1600"/></g>
+
+      <!-- truck -->
+      <g class="truck-mover">
+        <g class="truck" transform="translate(430 6)">
+          <ellipse cx="240" cy="330" rx="240" ry="12" fill="#000" opacity=".35"/>
+          <!-- speed streaks -->
+          <g stroke-linecap="round" stroke-width="5">
+            <line class="streak s1" x1="-30" y1="224" x2="-86" y2="224" stroke="#f0a028"/>
+            <line class="streak s2" x1="-16" y1="262" x2="-64" y2="262" stroke="#9aa4b5"/>
+            <line class="streak s3" x1="-34" y1="298" x2="-92" y2="298" stroke="#9aa4b5"/>
+          </g>
+          <g class="truck-body">
+            <!-- container trailer -->
+            <rect x="10" y="196" width="304" height="104" rx="3" fill="#f0a028"/>
+            <g stroke="#000" stroke-opacity=".10" stroke-width="4">
+              <line x1="26" y1="200" x2="26" y2="296"/><line x1="46" y1="200" x2="46" y2="296"/>
+              <line x1="66" y1="200" x2="66" y2="296"/><line x1="86" y1="200" x2="86" y2="296"/>
+              <line x1="106" y1="200" x2="106" y2="296"/><line x1="126" y1="200" x2="126" y2="296"/>
+              <line x1="146" y1="200" x2="146" y2="296"/><line x1="166" y1="200" x2="166" y2="296"/>
+              <line x1="186" y1="200" x2="186" y2="296"/><line x1="206" y1="200" x2="206" y2="296"/>
+              <line x1="226" y1="200" x2="226" y2="296"/><line x1="246" y1="200" x2="246" y2="296"/>
+              <line x1="266" y1="200" x2="266" y2="296"/><line x1="286" y1="200" x2="286" y2="296"/>
+            </g>
+            <rect x="10" y="196" width="304" height="104" rx="3" fill="none" stroke="#000" stroke-opacity=".18" stroke-width="2"/>
+            <rect x="34" y="228" width="256" height="40" rx="4" fill="#10141d" opacity=".82"/>
+            <text x="162" y="250" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="21" letter-spacing="2.5" fill="#eef1f6">SEVEN</text>
+            <text x="162" y="263" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="600" font-size="10" letter-spacing="4.2" fill="#f0a028">TRANSPORT</text>
+            <!-- chassis -->
+            <rect x="8" y="300" width="320" height="10" fill="#0d1017"/>
+            <rect x="150" y="310" width="24" height="8" fill="#151a24"/>
+            <!-- cab: DAF-style euro cabover -->
+            <path d="M334 310V192q0-10 10-10h86q14 0 18 12l16 52q4 10 4 22v42z" fill="#2b3a5c"/>
+            <path d="M400 182h30q14 0 18 12l16 52h-64z" fill="#243252"/>
+            <path d="M402 190h26q9 0 12 8l13 42q-26 4-51-2z" fill="url(#glassGrad)"/>
+            <rect x="334" y="186" width="58" height="52" rx="6" fill="#22304e"/>
+            <rect x="342" y="192" width="42" height="30" rx="4" fill="url(#glassGrad)" opacity=".75"/>
+            <rect x="334" y="252" width="134" height="10" fill="#f0a028"/>
+            <rect x="334" y="284" width="140" height="26" fill="#1a2438"/>
+            <g fill="#39496e"><rect x="418" y="288" width="46" height="4" rx="2"/><rect x="418" y="296" width="46" height="4" rx="2"/></g>
+            <rect x="462" y="272" width="10" height="12" rx="2" fill="#ffe9c0"/>
+            <rect x="452" y="304" width="22" height="6" rx="3" fill="#0d1017"/>
+            <rect x="466" y="220" width="8" height="18" rx="2" fill="#22304e"/>
+            <polygon points="472,274 600,266 600,296 472,292" fill="url(#beamGrad)"/>
+          </g>
+          <!-- wheels -->
+          <g class="wheel"><circle cx="52" cy="316" r="20" fill="#0b0e14"/><circle cx="52" cy="316" r="11" fill="#2c3750"/><g stroke="#4a5a7f" stroke-width="3"><line x1="52" y1="308" x2="52" y2="324"/><line x1="44" y1="316" x2="60" y2="316"/></g></g>
+          <g class="wheel"><circle cx="96" cy="316" r="20" fill="#0b0e14"/><circle cx="96" cy="316" r="11" fill="#2c3750"/><g stroke="#4a5a7f" stroke-width="3"><line x1="96" y1="308" x2="96" y2="324"/><line x1="88" y1="316" x2="104" y2="316"/></g></g>
+          <g class="wheel"><circle cx="140" cy="316" r="20" fill="#0b0e14"/><circle cx="140" cy="316" r="11" fill="#2c3750"/><g stroke="#4a5a7f" stroke-width="3"><line x1="140" y1="308" x2="140" y2="324"/><line x1="132" y1="316" x2="148" y2="316"/></g></g>
+          <g class="wheel"><circle cx="368" cy="314" r="24" fill="#0b0e14"/><circle cx="368" cy="314" r="13" fill="#2c3750"/><g stroke="#4a5a7f" stroke-width="3"><line x1="368" y1="304" x2="368" y2="324"/><line x1="358" y1="314" x2="378" y2="314"/></g></g>
+          <g class="wheel"><circle cx="438" cy="314" r="24" fill="#0b0e14"/><circle cx="438" cy="314" r="13" fill="#2c3750"/><g stroke="#4a5a7f" stroke-width="3"><line x1="438" y1="304" x2="438" y2="324"/><line x1="428" y1="314" x2="448" y2="314"/></g></g>
+        </g>
+      </g>
+    </svg>
   </div>
 </section>
 
 <section class="stats">
   <div class="wrap">
-    <div class="stat"><b data-count="2">2</b><span data-i18n="stats.bases">operating bases: NL and PL</span></div>
-    <div class="stat"><b><span data-count="27">27</span>+</b><span data-i18n="stats.countries">EU countries covered</span></div>
+    <div class="stat"><b>2</b><span data-i18n="stats.bases">operating bases: NL and PL</span></div>
+    <div class="stat"><b>27+</b><span data-i18n="stats.countries">EU countries covered</span></div>
     <div class="stat"><b>24/7</b><span data-i18n="stats.support">shipment support</span></div>
     <div class="stat"><b>100%</b><span data-i18n="stats.insured">of loads CMR insured</span></div>
   </div>
@@ -159,7 +299,7 @@ window.ST_CONFIG = {
 
 <section class="routes">
   <div class="wrap">
-    <img class="reveal" src="assets/img/routes.jpg?v=1" alt="Truck on a European highway" loading="lazy">
+    <img class="reveal" src="assets/img/hero.jpg?v=2" alt="Blue DAF XF tractor unit" loading="lazy">
     <div class="reveal">
       <h2 data-i18n="routes.h">Two home bases, one European network</h2>
       <p style="margin-top:14px" data-i18n="routes.p">With people on the ground in both the Netherlands and Poland, we run the east-west corridor daily and reach the rest of Europe on demand.</p>
@@ -274,7 +414,7 @@ window.ST_CONFIG = {
 </section>
 
 <section class="drivers" id="drivers">
-  <img class="bg" src="assets/img/cta.jpg?v=1" alt="" loading="lazy" aria-hidden="true">
+  <img class="bg" src="assets/img/cta.jpg?v=2" alt="" loading="lazy" aria-hidden="true">
   <div class="wrap">
     <h2 data-i18n="drv.h">Drivers: join a fleet that respects your time</h2>
     <p data-i18n="drv.p">We are growing on the NL and PL corridor and looking for professional drivers with a C+E licence. Fair pay, modern DAF trucks, planned home time.</p>
