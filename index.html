@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=2">
+<link rel="stylesheet" href="assets/css/style.css?v=3">
 <script>
 window.ST_CONFIG = {
   web3formsKey: "",            /* TODO: Web3Forms access key (Issue #1) */
@@ -97,7 +97,7 @@ window.ST_CONFIG = {
 
 <section class="hero">
   <div class="wrap hero-top">
-    <h1><span data-i18n="hero.t1">Road freight between</span> <span class="accent">NL, PL</span> <span data-i18n="hero.t2">and all of Europe</span></h1>
+    <h1><span data-i18n="hero.t1">Road freight across</span> <span class="accent" data-i18n="hero.t2">all of Europe</span></h1>
     <p class="sub" data-i18n="hero.sub">Full and partial loads, CMR insured and delivered on schedule, with one contact person from pickup to drop.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="#quote" data-i18n="nav.quote">Get a quote</a>
@@ -127,8 +127,27 @@ window.ST_CONFIG = {
           <rect x="510" y="276" width="150" height="64" fill="#141a26"/>
           <path d="M700 340V254h10v-16h44v16h10v86z" fill="#161c29"/>
           <rect x="800" y="230" width="56" height="110" fill="#161c29"/>
-          <rect x="880" y="262" width="130" height="78" fill="#141a26"/>
-          <path d="M1060 340v-70h90l30-24v94z" fill="#161c29"/>
+          <!-- container ship at the quay -->
+          <g>
+            <path d="M884 340l10-22h122l10 22z" fill="#161c29"/>
+            <g>
+              <rect x="900" y="306" width="20" height="11" fill="#2a3348"/><rect x="922" y="306" width="20" height="11" fill="#f0a028" opacity=".45"/>
+              <rect x="944" y="306" width="20" height="11" fill="#2a3348"/><rect x="966" y="306" width="20" height="11" fill="#2a3348"/>
+              <rect x="910" y="294" width="20" height="11" fill="#f0a028" opacity=".35"/><rect x="932" y="294" width="20" height="11" fill="#2a3348"/>
+              <rect x="954" y="294" width="20" height="11" fill="#2a3348"/>
+            </g>
+            <rect x="998" y="282" width="16" height="36" fill="#1c2434"/>
+            <rect x="1000" y="286" width="12" height="4" fill="#39496e"/>
+          </g>
+          <!-- harbor crane -->
+          <g fill="#1c2434">
+            <rect x="1078" y="298" width="9" height="42"/>
+            <rect x="1122" y="298" width="9" height="42"/>
+            <rect x="1068" y="290" width="74" height="9"/>
+            <path d="M1074 296 L1186 246 l5 8 L1082 302 z"/>
+            <rect x="1180" y="254" width="4" height="26" fill="#232c3f"/>
+            <rect x="1172" y="280" width="20" height="12" fill="#2a3348"/>
+          </g>
           <rect x="1230" y="246" width="64" height="94" fill="#161c29"/>
           <rect x="1320" y="272" width="180" height="68" fill="#141a26"/>
         </g>
@@ -156,10 +175,19 @@ window.ST_CONFIG = {
             <rect x="712" y="284" width="34" height="36" fill="#121722"/>
             <rect x="640" y="240" width="140" height="8" fill="#232c3f"/>
           </g>
+          <!-- motorway sign: the NL-PL corridor -->
+          <g>
+            <rect x="790" y="196" width="7" height="124" fill="#232c3f"/>
+            <rect x="899" y="196" width="7" height="124" fill="#232c3f"/>
+            <rect x="770" y="138" width="156" height="64" rx="6" fill="#1e4d38"/>
+            <rect x="770" y="138" width="156" height="64" rx="6" fill="none" stroke="#eef1f6" stroke-opacity=".4" stroke-width="2"/>
+            <text x="848" y="166" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="22" fill="#eef1f6">E 30</text>
+            <text x="848" y="188" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="600" font-size="12" fill="#eef1f6" opacity=".85">Amsterdam - Warszawa</text>
+          </g>
           <!-- trees -->
           <g fill="#1a2233">
-            <path d="M900 320c-18 0-24-14-12-24-10-10 0-26 12-26s22 16 12 26c12 10 6 24-12 24z"/>
-            <path d="M960 320c-14 0-20-12-10-20-8-9 0-22 10-22s18 13 10 22c10 8 4 20-10 20z"/>
+            <path d="M940 320c-18 0-24-14-12-24-10-10 0-26 12-26s22 16 12 26c12 10 6 24-12 24z"/>
+            <path d="M1000 320c-14 0-20-12-10-20-8-9 0-22 10-22s18 13 10 22c10 8 4 20-10 20z"/>
           </g>
           <!-- second stack group -->
           <g>
@@ -167,23 +195,48 @@ window.ST_CONFIG = {
             <rect x="1168" y="284" width="96" height="36" rx="2" fill="#2a3348"/>
             <rect x="1168" y="246" width="96" height="36" rx="2" fill="#f0a028"/>
           </g>
+          <!-- petrol station -->
+          <g>
+            <rect x="1284" y="222" width="24" height="20" rx="3" fill="#f0a028"/>
+            <text x="1296" y="237" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="15" fill="#201503">7</text>
+            <rect x="1288" y="242" width="16" height="78" fill="#1b2130"/>
+            <rect x="1316" y="212" width="152" height="12" rx="4" fill="#2a3348"/>
+            <rect x="1326" y="224" width="132" height="4" fill="#ffdf9e" opacity=".45"/>
+            <rect x="1330" y="224" width="8" height="96" fill="#232c3f"/>
+            <rect x="1446" y="224" width="8" height="96" fill="#232c3f"/>
+            <rect x="1352" y="274" width="18" height="46" rx="2" fill="#3a465e"/>
+            <rect x="1356" y="280" width="10" height="8" fill="#9fd7ff" opacity=".5"/>
+            <rect x="1392" y="266" width="58" height="54" fill="#1b2130"/>
+            <rect x="1400" y="276" width="26" height="18" fill="#ffdf9e" opacity=".3"/>
+          </g>
           <g fill="#1a2233">
-            <path d="M1360 320c-18 0-24-14-12-24-10-10 0-26 12-26s22 16 12 26c12 10 6 24-12 24z"/>
-            <path d="M1430 320c-14 0-20-12-10-20-8-9 0-22 10-22s18 13 10 22c10 8 4 20-10 20z"/>
+            <path d="M1530 320c-14 0-20-12-10-20-8-9 0-22 10-22s18 13 10 22c10 8 4 20-10 20z"/>
           </g>
         </g>
         <g id="posts1">
           <g fill="#8d99ad">
             <rect x="120" y="322" width="6" height="20"/><rect x="120" y="322" width="6" height="6" fill="#f0a028"/>
           </g>
-          <g fill="#8d99ad">
-            <rect x="520" y="322" width="6" height="20"/><rect x="520" y="322" width="6" height="6" fill="#f0a028"/>
+          <!-- streetlight with a warm pool on the tarmac -->
+          <g>
+            <rect x="330" y="234" width="6" height="108" fill="#232c3f"/>
+            <rect x="330" y="234" width="30" height="5" rx="2.5" fill="#232c3f"/>
+            <rect x="352" y="230" width="16" height="7" rx="3" fill="#ffdf9e"/>
+            <polygon points="354,238 366,238 386,342 334,342" fill="#f0a028" opacity=".06"/>
+            <ellipse cx="360" cy="348" rx="66" ry="11" fill="#f0a028" opacity=".09"/>
           </g>
           <g fill="#8d99ad">
-            <rect x="920" y="322" width="6" height="20"/><rect x="920" y="322" width="6" height="6" fill="#f0a028"/>
+            <rect x="720" y="322" width="6" height="20"/><rect x="720" y="322" width="6" height="6" fill="#f0a028"/>
+          </g>
+          <g>
+            <rect x="1130" y="234" width="6" height="108" fill="#232c3f"/>
+            <rect x="1130" y="234" width="30" height="5" rx="2.5" fill="#232c3f"/>
+            <rect x="1152" y="230" width="16" height="7" rx="3" fill="#ffdf9e"/>
+            <polygon points="1154,238 1166,238 1186,342 1134,342" fill="#f0a028" opacity=".06"/>
+            <ellipse cx="1160" cy="348" rx="66" ry="11" fill="#f0a028" opacity=".09"/>
           </g>
           <g fill="#8d99ad">
-            <rect x="1320" y="322" width="6" height="20"/><rect x="1320" y="322" width="6" height="6" fill="#f0a028"/>
+            <rect x="1480" y="322" width="6" height="20"/><rect x="1480" y="322" width="6" height="6" fill="#f0a028"/>
           </g>
         </g>
       </defs>
@@ -191,8 +244,93 @@ window.ST_CONFIG = {
       <!-- warm ground glow -->
       <ellipse cx="800" cy="470" rx="980" ry="180" fill="#f0a028" opacity=".05"/>
 
+      <!-- night sky -->
+      <g class="sky">
+        <g fill="#eef1f6">
+          <circle class="tw1" cx="90" cy="60" r="1.6"/><circle class="tw2" cx="210" cy="118" r="1.3"/>
+          <circle class="tw3" cx="330" cy="42" r="2"/><circle class="tw1" cx="470" cy="96" r="1.4"/>
+          <circle class="tw2" cx="590" cy="38" r="1.7"/><circle class="tw3" cx="700" cy="120" r="1.3"/>
+          <circle class="tw1" cx="820" cy="66" r="2"/><circle class="tw2" cx="950" cy="30" r="1.4"/>
+          <circle class="tw3" cx="1060" cy="98" r="1.6"/><circle class="tw1" cx="1180" cy="48" r="1.3"/>
+          <circle class="tw2" cx="1470" cy="130" r="1.6"/><circle class="tw3" cx="1540" cy="52" r="1.4"/>
+        </g>
+        <circle cx="1330" cy="84" r="36" fill="#eef1f6" opacity=".05"/>
+        <circle cx="1330" cy="84" r="21" fill="#dfe6f2" opacity=".92"/>
+        <circle cx="1339" cy="79" r="18" fill="#0e1118"/>
+        <g class="cloud" fill="#ffffff" opacity=".05">
+          <ellipse cx="250" cy="120" rx="90" ry="18"/><ellipse cx="320" cy="106" rx="60" ry="14"/>
+        </g>
+        <g class="cloud c2" fill="#ffffff" opacity=".04">
+          <ellipse cx="1000" cy="70" rx="110" ry="16"/><ellipse cx="1080" cy="56" rx="70" ry="12"/>
+        </g>
+      </g>
+
       <!-- parallax world -->
-      <g class="l-far"><use href="#skyline1"/><use href="#skyline1" x="1600"/></g>
+      <g class="l-far">
+        <use href="#skyline1"/><use href="#skyline1" x="1600"/>
+        <!-- wind turbines (explicit so the rotor animation reaches them) -->
+        <g>
+          <path d="M357 340 L359 252 h4 L363 340 z" fill="#1c2434"/>
+          <rect x="355" y="246" width="10" height="7" rx="2" fill="#232c3f"/>
+          <g class="rotor" style="transform-origin:360px 249px">
+            <g stroke="#2c3750" stroke-width="4" stroke-linecap="round">
+              <line x1="360" y1="249" x2="360" y2="211"/>
+              <line x1="360" y1="249" x2="393" y2="268"/>
+              <line x1="360" y1="249" x2="327" y2="268"/>
+            </g>
+            <circle cx="360" cy="249" r="4" fill="#3a465e"/>
+          </g>
+        </g>
+        <g>
+          <path d="M1177 340 L1179 258 h4 L1183 340 z" fill="#1c2434"/>
+          <rect x="1175" y="252" width="10" height="7" rx="2" fill="#232c3f"/>
+          <g class="rotor" style="transform-origin:1180px 255px">
+            <g stroke="#2c3750" stroke-width="4" stroke-linecap="round">
+              <line x1="1180" y1="255" x2="1180" y2="219"/>
+              <line x1="1180" y1="255" x2="1211" y2="273"/>
+              <line x1="1180" y1="255" x2="1149" y2="273"/>
+            </g>
+            <circle cx="1180" cy="255" r="4" fill="#3a465e"/>
+          </g>
+        </g>
+        <g>
+          <path d="M1957 340 L1959 252 h4 L1963 340 z" fill="#1c2434"/>
+          <rect x="1955" y="246" width="10" height="7" rx="2" fill="#232c3f"/>
+          <g class="rotor" style="transform-origin:1960px 249px">
+            <g stroke="#2c3750" stroke-width="4" stroke-linecap="round">
+              <line x1="1960" y1="249" x2="1960" y2="211"/>
+              <line x1="1960" y1="249" x2="1993" y2="268"/>
+              <line x1="1960" y1="249" x2="1927" y2="268"/>
+            </g>
+            <circle cx="1960" cy="249" r="4" fill="#3a465e"/>
+          </g>
+        </g>
+        <!-- radio masts with warning lights -->
+        <g>
+          <path d="M1542 340 L1546 236 h3 L1553 340 z" fill="#1c2434"/>
+          <line x1="1540" y1="300" x2="1555" y2="300" stroke="#1c2434" stroke-width="3"/>
+          <line x1="1542" y1="272" x2="1553" y2="272" stroke="#1c2434" stroke-width="3"/>
+          <circle class="tw2" cx="1547.5" cy="232" r="3.2" fill="#e2685f"/>
+        </g>
+        <g>
+          <path d="M3142 340 L3146 236 h3 L3153 340 z" fill="#1c2434"/>
+          <line x1="3140" y1="300" x2="3155" y2="300" stroke="#1c2434" stroke-width="3"/>
+          <line x1="3142" y1="272" x2="3153" y2="272" stroke="#1c2434" stroke-width="3"/>
+          <circle class="tw1" cx="3147.5" cy="232" r="3.2" fill="#e2685f"/>
+        </g>
+        <g>
+          <path d="M2777 340 L2779 258 h4 L2783 340 z" fill="#1c2434"/>
+          <rect x="2775" y="252" width="10" height="7" rx="2" fill="#232c3f"/>
+          <g class="rotor" style="transform-origin:2780px 255px">
+            <g stroke="#2c3750" stroke-width="4" stroke-linecap="round">
+              <line x1="2780" y1="255" x2="2780" y2="219"/>
+              <line x1="2780" y1="255" x2="2811" y2="273"/>
+              <line x1="2780" y1="255" x2="2749" y2="273"/>
+            </g>
+            <circle cx="2780" cy="255" r="4" fill="#3a465e"/>
+          </g>
+        </g>
+      </g>
       <g transform="translate(0 24)"><g class="l-mid"><use href="#mid1"/><use href="#mid1" x="1600"/></g></g>
 
       <!-- road -->
@@ -211,6 +349,12 @@ window.ST_CONFIG = {
             <line class="streak s1" x1="-30" y1="224" x2="-86" y2="224" stroke="#f0a028"/>
             <line class="streak s2" x1="-16" y1="262" x2="-64" y2="262" stroke="#9aa4b5"/>
             <line class="streak s3" x1="-34" y1="298" x2="-92" y2="298" stroke="#9aa4b5"/>
+          </g>
+          <!-- road dust behind the rear axles -->
+          <g fill="#9aa4b5">
+            <circle class="puff p1" cx="36" cy="318" r="5"/>
+            <circle class="puff p2" cx="30" cy="322" r="4"/>
+            <circle class="puff p3" cx="40" cy="324" r="3.5"/>
           </g>
           <g class="truck-body">
             <!-- container trailer -->
@@ -231,19 +375,26 @@ window.ST_CONFIG = {
             <!-- chassis -->
             <rect x="8" y="300" width="320" height="10" fill="#0d1017"/>
             <rect x="150" y="310" width="24" height="8" fill="#151a24"/>
-            <!-- cab: DAF-style euro cabover -->
-            <path d="M334 310V192q0-10 10-10h86q14 0 18 12l16 52q4 10 4 22v42z" fill="#2b3a5c"/>
-            <path d="M400 182h30q14 0 18 12l16 52h-64z" fill="#243252"/>
-            <path d="M402 190h26q9 0 12 8l13 42q-26 4-51-2z" fill="url(#glassGrad)"/>
-            <rect x="334" y="186" width="58" height="52" rx="6" fill="#22304e"/>
-            <rect x="342" y="192" width="42" height="30" rx="4" fill="url(#glassGrad)" opacity=".75"/>
-            <rect x="334" y="252" width="134" height="10" fill="#f0a028"/>
-            <rect x="334" y="284" width="140" height="26" fill="#1a2438"/>
-            <g fill="#39496e"><rect x="418" y="288" width="46" height="4" rx="2"/><rect x="418" y="296" width="46" height="4" rx="2"/></g>
-            <rect x="462" y="272" width="10" height="12" rx="2" fill="#ffe9c0"/>
-            <rect x="452" y="304" width="22" height="6" rx="3" fill="#0d1017"/>
-            <rect x="466" y="220" width="8" height="18" rx="2" fill="#22304e"/>
-            <polygon points="472,274 600,266 600,296 472,292" fill="url(#beamGrad)"/>
+            <!-- cab: DAF XF style euro cabover, near-vertical front -->
+            <path d="M334 310V188q0-12 12-12h104q10 0 12 11l8 40q2 9 2 18v65z" fill="#2b3a5c"/>
+            <path d="M450 176q10 0 12 11l8 40q2 9 2 18v65h-18z" fill="#243252"/>
+            <rect x="334" y="176" width="122" height="9" rx="4.5" fill="#22304e"/>
+            <path d="M412 192h36q7 0 8 7l7 32q1 6-5 6h-40q-6 0-6-6v-33q0-6 6-6z" fill="url(#glassGrad)"/>
+            <rect x="342" y="192" width="56" height="34" rx="5" fill="url(#glassGrad)" opacity=".65"/>
+            <rect x="334" y="240" width="138" height="9" fill="#f0a028"/>
+            <rect x="402" y="249" width="3" height="58" fill="#1d2740"/>
+            <rect x="410" y="258" width="13" height="4" rx="2" fill="#9aa4b5" opacity=".7"/>
+            <text x="367" y="290" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="26" fill="#f0a028" opacity=".95">7</text>
+            <g fill="#39496e">
+              <rect x="428" y="256" width="42" height="5" rx="2.5"/>
+              <rect x="428" y="266" width="42" height="5" rx="2.5"/>
+              <rect x="428" y="276" width="42" height="5" rx="2.5"/>
+            </g>
+            <rect x="334" y="288" width="140" height="22" fill="#1a2438"/>
+            <rect x="459" y="291" width="13" height="10" rx="2" fill="#ffe9c0"/>
+            <rect x="452" y="305" width="22" height="5" rx="2.5" fill="#0d1017"/>
+            <rect x="470" y="212" width="7" height="17" rx="2" fill="#22304e"/>
+            <polygon points="474,290 610,282 610,308 474,306" fill="url(#beamGrad)"/>
           </g>
           <!-- wheels -->
           <g class="wheel"><circle cx="52" cy="316" r="20" fill="#0b0e14"/><circle cx="52" cy="316" r="11" fill="#2c3750"/><g stroke="#4a5a7f" stroke-width="3"><line x1="52" y1="308" x2="52" y2="324"/><line x1="44" y1="316" x2="60" y2="316"/></g></g>
@@ -473,7 +624,7 @@ window.ST_CONFIG = {
   </div>
 </div>
 
-<script src="assets/js/i18n.js?v=1"></script>
+<script src="assets/js/i18n.js?v=2"></script>
 <script src="assets/js/app.js?v=1"></script>
 </body>
 </html>
